@@ -40,13 +40,13 @@ export default function Header() {
               height={40}
               className="rounded-lg object-cover"
             />
-            <span className="font-bold text-lg text-gray-900 hidden sm:block">
+            <span className="font-bold text-base sm:text-lg text-gray-900 hidden sm:block">
               Trinetra AI
             </span>
           </a>
 
           {/* Desktop Nav */}
-          <nav className="hidden lg:flex items-center gap-8">
+          <nav className="hidden md:flex items-center gap-6 lg:gap-8">
             {NAV_LINKS.map((link) => (
               <a
                 key={link.href}
@@ -61,13 +61,13 @@ export default function Header() {
           {/* Desktop CTA */}
           <button
             onClick={scrollToForm}
-            className="hidden lg:block bg-[#FF7A00] hover:bg-[#E66A00] text-white font-semibold text-sm px-5 py-2.5 rounded-full transition-all duration-200 shadow-sm hover:shadow-md"
+            className="hidden md:flex bg-[#FF7A00] hover:bg-[#E66A00] text-white font-semibold text-sm px-5 py-2.5 rounded-full transition-all duration-200 shadow-sm hover:shadow-md"
           >
             GET CRM FOR ₹{PRICE}
           </button>
 
           {/* Mobile: hamburger + CTA */}
-          <div className="flex items-center gap-3 lg:hidden">
+          <div className="flex items-center gap-3 md:hidden">
             <button
               onClick={scrollToForm}
               className="bg-[#FF7A00] hover:bg-[#E66A00] text-white font-semibold text-xs px-4 py-2 rounded-full transition-colors"
@@ -86,7 +86,7 @@ export default function Header() {
 
         {/* Mobile Nav Dropdown */}
         {mobileOpen && (
-          <div className="lg:hidden border-t border-gray-100 py-4 space-y-3">
+          <div className="md:hidden border-t border-gray-100 py-4 space-y-3">
             {NAV_LINKS.map((link) => (
               <a
                 key={link.href}

@@ -35,7 +35,7 @@ export default function CrmCardsSection({ onSelectCrm }: CrmCardsProps) {
   };
 
   return (
-    <section id="crm-solutions" className="py-16 sm:py-24 bg-white">
+    <section id="crm-solutions" className="py-12 sm:py-16 lg:py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -44,7 +44,7 @@ export default function CrmCardsSection({ onSelectCrm }: CrmCardsProps) {
           transition={{ duration: 0.5 }}
           className="text-center max-w-3xl mx-auto mb-12 sm:mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-4">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-gray-900 mb-3 sm:mb-4">
             Your Business. <span className="text-[#FF7A00]">Your CRM.</span>
           </h2>
           <p className="text-gray-600 text-base sm:text-lg">
@@ -52,7 +52,7 @@ export default function CrmCardsSection({ onSelectCrm }: CrmCardsProps) {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {CRMS.map((crm, i) => (
             <motion.div
               key={crm.id}
@@ -60,10 +60,10 @@ export default function CrmCardsSection({ onSelectCrm }: CrmCardsProps) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.08 }}
-              className="group bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-xl hover:border-orange-100 transition-all duration-300 overflow-hidden flex flex-col"
+              className="group bg-white rounded-xl sm:rounded-2xl border border-gray-100 shadow-sm hover:shadow-xl hover:border-orange-100 transition-all duration-300 overflow-hidden flex flex-col"
             >
               {/* Mini dashboard preview */}
-              <div className="bg-gray-50 p-4 border-b border-gray-100">
+              <div className="bg-gray-50 p-3 sm:p-4 border-b border-gray-100">
                 <div className="flex items-center gap-2 mb-3">
                   <div className="w-8 h-8 rounded-lg bg-white border border-gray-200 flex items-center justify-center">
                     {iconMap[crm.icon]}
@@ -86,12 +86,12 @@ export default function CrmCardsSection({ onSelectCrm }: CrmCardsProps) {
               </div>
 
               {/* Content */}
-              <div className="p-5 flex-1 flex flex-col">
-                <p className="text-sm text-gray-600 mb-4 leading-relaxed">
+              <div className="p-4 sm:p-5 flex-1 flex flex-col">
+                <p className="text-xs sm:text-sm text-gray-600 mb-3 sm:mb-4 leading-relaxed">
                   {crm.description}
                 </p>
 
-                <div className="space-y-2 mb-5 flex-1">
+                <div className="space-y-1.5 sm:space-y-2 mb-4 sm:mb-5 flex-1">
                   {crm.features.map((f) => (
                     <div key={f} className="flex items-center gap-2">
                       <Check size={14} className="text-[#FF7A00] shrink-0" />
@@ -101,9 +101,9 @@ export default function CrmCardsSection({ onSelectCrm }: CrmCardsProps) {
                 </div>
 
                 {/* Price */}
-                <div className="bg-[#FFF7F0] rounded-xl p-3 mb-4 text-center">
+                <div className="bg-[#FFF7F0] rounded-lg sm:rounded-xl p-2.5 sm:p-3 mb-3 sm:mb-4 text-center">
                   <span className="text-xs text-gray-500">First Month</span>
-                  <div className="text-2xl font-extrabold text-[#FF7A00]">₹{PRICE}</div>
+                  <div className="text-xl sm:text-2xl font-extrabold text-[#FF7A00]">₹{PRICE}</div>
                 </div>
 
                 {/* Buttons */}

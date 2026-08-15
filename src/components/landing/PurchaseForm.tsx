@@ -134,14 +134,14 @@ export default function PurchaseForm({ preselectedCrm }: PurchaseFormProps) {
   };
 
   const inputClass = (field: keyof FormErrors) =>
-    `w-full px-4 py-3 rounded-xl border text-sm transition-colors focus:outline-none focus:ring-2 focus:ring-[#FF7A00]/30 focus:border-[#FF7A00] ${
+    `w-full px-3.5 sm:px-4 py-2.5 sm:py-3 rounded-lg sm:rounded-xl border text-sm transition-colors focus:outline-none focus:ring-2 focus:ring-[#FF7A00]/30 focus:border-[#FF7A00] ${
       errors[field] ? 'border-red-300 bg-red-50/50' : 'border-gray-200 bg-gray-50/50'
     }`;
 
-  const labelClass = 'block text-sm font-medium text-gray-700 mb-1.5';
+  const labelClass = 'block text-xs sm:text-sm font-medium text-gray-700 mb-1 sm:mb-1.5';
 
   return (
-    <section id="purchase-form" className="py-16 sm:py-24 bg-[#FFF7F0]">
+    <section id="purchase-form" className="py-12 sm:py-16 lg:py-24 bg-[#FFF7F0]">
       <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -149,15 +149,15 @@ export default function PurchaseForm({ preselectedCrm }: PurchaseFormProps) {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <div className="text-center mb-8">
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-3">
+          <div className="text-center mb-6 sm:mb-8">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-gray-900 mb-2 sm:mb-3">
               Get Your <span className="text-[#FF7A00]">CRM Access</span>
             </h2>
             <p className="text-gray-600 text-sm">Fill in your details and proceed to payment.</p>
           </div>
 
-          <form onSubmit={handleSubmit} className="bg-white rounded-2xl p-6 sm:p-8 shadow-lg border border-gray-100">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+          <form onSubmit={handleSubmit} className="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 shadow-lg border border-gray-100">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 mb-4">
               {/* Full Name */}
               <div>
                 <label className={labelClass}>
@@ -308,7 +308,7 @@ export default function PurchaseForm({ preselectedCrm }: PurchaseFormProps) {
             <button
               type="submit"
               disabled={submitting}
-              className="w-full bg-[#FF7A00] hover:bg-[#E66A00] disabled:opacity-60 disabled:cursor-not-allowed text-white font-bold text-base sm:text-lg px-8 py-4 rounded-xl transition-all duration-200 shadow-lg shadow-orange-200 flex items-center justify-center gap-2 mt-4"
+              className="w-full bg-[#FF7A00] hover:bg-[#E66A00] disabled:opacity-60 disabled:cursor-not-allowed text-white font-bold text-sm sm:text-base lg:text-lg px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl transition-all duration-200 shadow-lg shadow-orange-200 flex items-center justify-center gap-2 mt-4"
             >
               {submitting ? (
                 <>

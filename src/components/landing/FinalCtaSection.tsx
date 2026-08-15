@@ -13,7 +13,7 @@ export default function FinalCtaSection() {
   };
 
   return (
-    <section className="py-16 sm:py-24 bg-gradient-to-br from-[#FF7A00] to-[#E66A00] relative overflow-hidden">
+    <section className="py-12 sm:py-16 lg:py-24 bg-gradient-to-br from-[#FF7A00] to-[#E66A00] relative overflow-hidden">
       {/* Decorative circles */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2" />
       <div className="absolute bottom-0 left-0 w-64 h-64 bg-white/5 rounded-full translate-y-1/2 -translate-x-1/2" />
@@ -25,16 +25,16 @@ export default function FinalCtaSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-white mb-4">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white mb-3 sm:mb-4">
             Ready To Manage Your Business Better?
           </h2>
-          <p className="text-orange-100 text-base sm:text-lg mb-6">
+          <p className="text-orange-100 text-sm sm:text-base lg:text-lg mb-4 sm:mb-6">
             Choose your industry CRM and get started today.
           </p>
-          <div className="text-5xl sm:text-6xl font-extrabold text-white mb-2">
+          <div className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white mb-1.5 sm:mb-2">
             ₹{PRICE}
           </div>
-          <p className="text-orange-100 text-sm font-medium mb-8">FIRST MONTH ONLY</p>
+          <p className="text-orange-100 text-xs sm:text-sm font-medium mb-6 sm:mb-8">FIRST MONTH ONLY</p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <button

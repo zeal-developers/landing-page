@@ -30,21 +30,21 @@ const steps = [
 
 export default function HowItWorksSection() {
   return (
-    <section id="how-it-works" className="py-16 sm:py-24 bg-[#FFF7F0]">
+    <section id="how-it-works" className="py-12 sm:py-16 lg:py-24 bg-[#FFF7F0]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-center max-w-3xl mx-auto mb-12 sm:mb-16"
+          className="text-center max-w-3xl mx-auto mb-8 sm:mb-12 lg:mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-4">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-gray-900 mb-3 sm:mb-4">
             Get Your CRM in <span className="text-[#FF7A00]">4 Simple Steps</span>
           </h2>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 max-w-5xl mx-auto">
           {steps.map((step, i) => (
             <motion.div
               key={step.title}
@@ -60,11 +60,11 @@ export default function HowItWorksSection() {
               )}
 
               <div className="relative z-10">
-                <div className="w-20 h-20 rounded-2xl bg-white shadow-lg border border-gray-100 flex items-center justify-center mx-auto mb-4">
-                  <step.icon size={28} className="text-[#FF7A00]" />
+                <div className="w-14 h-14 sm:w-16 sm:h-16 lg:w-20 lg:h-20 rounded-xl sm:rounded-2xl bg-white shadow-lg border border-gray-100 flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                  <step.icon size={22} className="text-[#FF7A00] w-5 h-5 sm:w-6 sm:h-6 lg:w-7 lg:h-7" />
                 </div>
                 <div className="text-xs font-bold text-[#FF7A00] mb-2">STEP {i + 1}</div>
-                <h3 className={`font-bold text-gray-900 text-sm mb-2 ${step.highlight ? 'text-base' : ''}`}>
+                <h3 className={`font-bold text-gray-900 text-xs sm:text-sm mb-1.5 sm:mb-2 ${step.highlight ? 'sm:text-base' : ''}`}>
                   {step.title}
                 </h3>
                 <p className="text-xs text-gray-600 leading-relaxed">

@@ -25,7 +25,7 @@ const painPoints = [
 
 export default function ProblemSection() {
   return (
-    <section className="py-16 sm:py-24 bg-white">
+    <section className="py-12 sm:py-16 lg:py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Headline */}
         <motion.div
@@ -35,14 +35,14 @@ export default function ProblemSection() {
           transition={{ duration: 0.5 }}
           className="text-center max-w-3xl mx-auto mb-12"
         >
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-4">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-gray-900 mb-3 sm:mb-4">
             Still Managing Your Business Across{' '}
             <span className="text-[#FF7A00]">Excel, WhatsApp</span> & Multiple Tools?
           </h2>
         </motion.div>
 
         {/* Scattered tools */}
-        <div className="flex flex-wrap justify-center gap-3 sm:gap-4 mb-12">
+        <div className="flex flex-wrap justify-center gap-2 sm:gap-3 lg:gap-4 mb-8 sm:mb-12">
           {problems.map((p, i) => (
             <motion.div
               key={p.label}
@@ -50,7 +50,7 @@ export default function ProblemSection() {
               whileInView={{ opacity: 1, y: 0, rotate: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: i * 0.06 }}
-              className={`flex items-center gap-2 px-3 py-2 sm:px-4 sm:py-2.5 rounded-xl border text-xs sm:text-sm font-medium ${p.color}`}
+              className={`flex items-center gap-1.5 sm:gap-2 px-2.5 py-1.5 sm:px-4 sm:py-2.5 rounded-lg sm:rounded-xl border text-[11px] sm:text-sm font-medium ${p.color}`}
             >
               <p.icon size={16} />
               {p.label}
@@ -59,7 +59,7 @@ export default function ProblemSection() {
         </div>
 
         {/* Pain points */}
-        <div className="max-w-2xl mx-auto space-y-3 mb-12">
+        <div className="max-w-2xl mx-auto space-y-2.5 sm:space-y-3 mb-8 sm:mb-12">
           {painPoints.map((point, i) => (
             <motion.div
               key={point}
@@ -67,7 +67,7 @@ export default function ProblemSection() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: i * 0.08 }}
-              className="flex items-center gap-3 text-gray-700"
+              className="flex items-center gap-2.5 sm:gap-3 text-sm sm:text-base text-gray-700"
             >
               <div className="w-2 h-2 rounded-full bg-red-400 shrink-0" />
               <span className="text-sm sm:text-base">{point}</span>
@@ -81,7 +81,7 @@ export default function ProblemSection() {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-4 bg-[#FFF7F0] rounded-2xl p-6 sm:p-8 border border-orange-100"
+          className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 bg-[#FFF7F0] rounded-xl sm:rounded-2xl p-5 sm:p-8 border border-orange-100"
         >
           <div className="text-center sm:text-left">
             <p className="text-lg sm:text-xl font-bold text-gray-900">Ab Sab Ek CRM Mein.</p>

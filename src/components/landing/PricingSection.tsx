@@ -9,7 +9,7 @@ export default function PricingSection() {
   };
 
   return (
-    <section className="py-16 sm:py-24 bg-white">
+    <section className="py-12 sm:py-16 lg:py-24 bg-white">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -18,13 +18,13 @@ export default function PricingSection() {
           transition={{ duration: 0.5 }}
           className="text-center"
         >
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-10">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-gray-900 mb-6 sm:mb-10">
             Start With Your <span className="text-[#FF7A00]">Industry CRM</span>
           </h2>
 
-          <div className="bg-gradient-to-br from-[#FFF7F0] to-white rounded-3xl p-8 sm:p-12 border-2 border-orange-100 shadow-lg">
+          <div className="bg-gradient-to-br from-[#FFF7F0] to-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-12 border-2 border-orange-100 shadow-lg">
             <div className="text-sm font-semibold text-gray-500 mb-2">FIRST MONTH ONLY</div>
-            <div className="text-6xl sm:text-7xl font-extrabold text-[#FF7A00] mb-2">
+            <div className="text-5xl sm:text-6xl lg:text-7xl font-extrabold text-[#FF7A00] mb-2">
               ₹{PRICE}
             </div>
             <div className="text-sm text-gray-500 mb-6">
@@ -40,7 +40,7 @@ export default function PricingSection() {
 
             <button
               onClick={scrollToForm}
-              className="w-full sm:w-auto bg-[#FF7A00] hover:bg-[#E66A00] text-white font-bold text-lg px-10 py-4 rounded-full transition-all duration-200 shadow-lg shadow-orange-200 hover:shadow-xl hover:scale-[1.02] active:scale-[0.98]"
+              className="w-full sm:w-auto bg-[#FF7A00] hover:bg-[#E66A00] text-white font-bold text-base sm:text-lg px-8 sm:px-10 py-3.5 sm:py-4 rounded-full transition-all duration-200 shadow-lg shadow-orange-200 hover:shadow-xl hover:scale-[1.02] active:scale-[0.98]"
             >
               GET CRM FOR ₹{PRICE}
             </button>

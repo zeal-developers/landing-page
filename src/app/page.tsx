@@ -47,7 +47,7 @@ export default function LandingPage() {
   return (
     <div className="min-h-screen flex flex-col bg-white">
       <Header />
-      <main className="flex-1 pt-16 sm:pt-18">
+      <main className="flex-1 pt-14 sm:pt-16 md:pt-[4.5rem]">
         <HeroSection />
         <ProblemSection />
         <CrmCardsSection onSelectCrm={handleSelectCrm} />
@@ -60,7 +60,7 @@ export default function LandingPage() {
         <FaqSection />
         <FinalCtaSection />
         {/* Spacer for mobile sticky CTA */}
-        <div className="h-20 lg:hidden" />
+        <div className="h-16 sm:h-18 lg:hidden" />
       </main>
       <Footer />
       <MobileStickyCta />

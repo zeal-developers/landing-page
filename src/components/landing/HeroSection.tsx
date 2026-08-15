@@ -33,7 +33,7 @@ export default function HeroSection() {
   };
 
   return (
-    <section className="relative pt-24 sm:pt-32 pb-16 sm:pb-24 overflow-hidden bg-gradient-to-b from-[#FFF7F0] to-white">
+    <section className="relative pt-20 sm:pt-28 lg:pt-32 pb-12 sm:pb-20 lg:pb-24 overflow-hidden bg-gradient-to-b from-[#FFF7F0] to-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
           {/* Offer Badge */}
@@ -42,7 +42,7 @@ export default function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4 }}
           >
-            <span className="inline-flex items-center gap-2 bg-[#FF7A00] text-white font-bold text-sm px-5 py-2 rounded-full mb-6 shadow-lg shadow-orange-200">
+            <span className="inline-flex items-center gap-2 bg-[#FF7A00] text-white font-bold text-xs sm:text-sm px-4 sm:px-5 py-1.5 sm:py-2 rounded-full mb-4 sm:mb-6 shadow-lg shadow-orange-200">
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-white"></span>
@@ -56,7 +56,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight mb-6 tracking-tight"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight mb-4 sm:mb-6 tracking-tight"
           >
             Your Business.{' '}
             <span className="text-[#FF7A00]">Your CRM.</span>
@@ -69,7 +69,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-lg sm:text-xl text-gray-600 mb-8 leading-relaxed"
+            className="text-base sm:text-lg lg:text-xl text-gray-600 mb-6 sm:mb-8 leading-relaxed px-2"
           >
             Manage Leads, Customers, Teams, Follow-ups, Sales & Daily Operations
             — All From One CRM.
@@ -84,13 +84,13 @@ export default function HeroSection() {
           >
             <button
               onClick={scrollToForm}
-              className="w-full sm:w-auto bg-[#FF7A00] hover:bg-[#E66A00] text-white font-bold text-base sm:text-lg px-8 py-4 rounded-full transition-all duration-200 shadow-lg shadow-orange-200 hover:shadow-xl hover:shadow-orange-300 hover:scale-[1.02] active:scale-[0.98]"
+              className="w-full sm:w-auto bg-[#FF7A00] hover:bg-[#E66A00] text-white font-bold text-sm sm:text-base lg:text-lg px-6 sm:px-8 py-3.5 sm:py-4 rounded-full transition-all duration-200 shadow-lg shadow-orange-200 hover:shadow-xl hover:shadow-orange-300 hover:scale-[1.02] active:scale-[0.98]"
             >
               GET YOUR CRM FOR ₹{PRICE}
             </button>
             <button
               onClick={scrollToCrm}
-              className="w-full sm:w-auto border-2 border-gray-200 hover:border-[#FF7A00] text-gray-700 hover:text-[#FF7A00] font-semibold text-base sm:text-lg px-8 py-4 rounded-full transition-all duration-200"
+              className="w-full sm:w-auto border-2 border-gray-200 hover:border-[#FF7A00] text-gray-700 hover:text-[#FF7A00] font-semibold text-sm sm:text-base lg:text-lg px-6 sm:px-8 py-3.5 sm:py-4 rounded-full transition-all duration-200"
             >
               EXPLORE CRMs
             </button>
@@ -102,7 +102,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.4 }}
-          className="relative max-w-5xl mx-auto"
+          className="relative max-w-5xl mx-auto scale-[0.85] sm:scale-90 md:scale-95 lg:scale-100"
         >
           {/* Floating cards */}
           {floatCards.map((card) => (
@@ -141,31 +141,31 @@ export default function HeroSection() {
               <DashboardModule icon="📞" label="Follow-ups" value="67" change="Pending" />
               <DashboardModule icon="📈" label="Sales" value="₹4.2L" change="+15%" />
             </div>
-            <div className="grid grid-cols-3 sm:grid-cols-6 gap-2 px-4 sm:px-6 pb-4 sm:pb-6">
+            <div className="grid grid-cols-3 sm:grid-cols-6 gap-1.5 sm:gap-2 px-4 sm:px-6 pb-4 sm:pb-6">
               {['Candidates', 'Companies', 'Projects', 'Tasks', 'Team', 'Reports'].map((m) => (
                 <div
                   key={m}
-                  className="bg-[#FFF7F0] rounded-lg px-2 py-3 text-center text-xs font-medium text-gray-700 hover:bg-orange-100 transition-colors cursor-default"
+                  className="bg-[#FFF7F0] rounded-lg px-1.5 sm:px-2 py-2 sm:py-3 text-center text-[10px] sm:text-xs font-medium text-gray-700 hover:bg-orange-100 transition-colors cursor-default"
                 >
                   {m}
                 </div>
               ))}
             </div>
             {/* Mini chart area */}
-            <div className="px-4 sm:px-6 pb-6">
-              <div className="bg-gray-50 rounded-xl p-4 border border-gray-100">
+            <div className="px-3 sm:px-6 pb-4 sm:pb-6">
+              <div className="bg-gray-50 rounded-xl p-3 sm:p-4 border border-gray-100">
                 <div className="flex items-center justify-between mb-3">
                   <span className="text-xs font-semibold text-gray-700">Monthly Overview</span>
                   <span className="text-xs text-[#FF7A00] font-medium">This Month</span>
                 </div>
-                <div className="flex items-end gap-1.5 h-16">
+                <div className="flex items-end gap-0.5 sm:gap-1.5 h-12 sm:h-16">
                   {[40, 65, 45, 80, 55, 90, 70, 85, 60, 95, 75, 88].map((h, i) => (
                     <div key={i} className="flex-1 flex flex-col items-center gap-1">
                       <div
                         className="w-full rounded-sm bg-[#FF7A00] transition-all duration-500"
                         style={{ height: `${h}%`, opacity: 0.6 + (h / 200) }}
                       />
-                      <span className="text-[9px] text-gray-400">
+                      <span className="text-[7px] sm:text-[9px] text-gray-400">
                         {['J','F','M','A','M','J','J','A','S','O','N','D'][i]}
                       </span>
                     </div>
@@ -186,11 +186,11 @@ export default function HeroSection() {
 
 function DashboardModule({ icon, label, value, change }: { icon: string; label: string; value: string; change: string }) {
   return (
-    <div className="bg-gray-50 rounded-xl p-3 sm:p-4 border border-gray-100">
-      <div className="text-lg sm:text-xl mb-1">{icon}</div>
-      <div className="text-lg sm:text-2xl font-bold text-gray-900">{value}</div>
-      <div className="text-xs text-gray-500 mt-0.5">{label}</div>
-      <div className={`text-xs font-medium mt-1 ${change.startsWith('+') ? 'text-green-600' : 'text-[#FF7A00]'}`}>
+    <div className="bg-gray-50 rounded-lg sm:rounded-xl p-2.5 sm:p-4 border border-gray-100">
+      <div className="text-base sm:text-xl mb-0.5 sm:mb-1">{icon}</div>
+      <div className="text-base sm:text-2xl font-bold text-gray-900">{value}</div>
+      <div className="text-[10px] sm:text-xs text-gray-500 mt-0.5">{label}</div>
+      <div className={`text-[10px] sm:text-xs font-medium mt-0.5 sm:mt-1 ${change.startsWith('+') ? 'text-green-600' : 'text-[#FF7A00]'}`}>
         {change}
       </div>
     </div>

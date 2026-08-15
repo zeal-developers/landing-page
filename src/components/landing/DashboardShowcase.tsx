@@ -18,28 +18,28 @@ export default function DashboardShowcase() {
   const stats = useMemo(() => DEMO_STATS[crm.id] || [120, 85, 45], [crm.id]);
 
   return (
-    <section className="py-16 sm:py-24 bg-white">
+    <section className="py-12 sm:py-16 lg:py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-center max-w-3xl mx-auto mb-10"
+          className="text-center max-w-3xl mx-auto mb-6 sm:mb-10"
         >
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-4">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-gray-900 mb-3 sm:mb-4">
             Everything Your Business Needs.{' '}
             <span className="text-[#FF7A00]">In One Dashboard.</span>
           </h2>
         </motion.div>
 
         {/* Tabs */}
-        <div className="flex flex-wrap justify-center gap-2 mb-8">
+        <div className="flex flex-wrap justify-center gap-1.5 sm:gap-2 mb-6 sm:mb-8">
           {CRMS.map((c, i) => (
             <button
               key={c.id}
               onClick={() => setActive(i)}
-              className={`px-4 py-2 rounded-full text-xs sm:text-sm font-medium transition-all duration-200 ${
+              className={`px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-[11px] sm:text-sm font-medium transition-all duration-200 ${
                 active === i
                   ? 'bg-[#FF7A00] text-white shadow-md'
                   : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
@@ -56,7 +56,7 @@ export default function DashboardShowcase() {
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.3 }}
-          className="max-w-4xl mx-auto bg-gray-50 rounded-2xl border border-gray-200 overflow-hidden shadow-lg"
+          className="max-w-4xl mx-auto bg-gray-50 rounded-xl sm:rounded-2xl border border-gray-200 overflow-hidden shadow-lg"
         >
           {/* Top bar */}
           <div className="flex items-center gap-2 px-4 py-3 bg-white border-b border-gray-100">
@@ -73,7 +73,7 @@ export default function DashboardShowcase() {
           </div>
 
           {/* Sidebar + Content layout */}
-          <div className="flex min-h-[320px]">
+          <div className="flex min-h-[260px] sm:min-h-[320px]">
             {/* Sidebar */}
             <div className="hidden sm:flex flex-col w-48 bg-white border-r border-gray-100 p-3 shrink-0">
               <div className="text-xs font-bold text-gray-400 mb-3 px-2">MODULES</div>
