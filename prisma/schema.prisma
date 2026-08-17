@@ -3,13 +3,13 @@ generator client {
 }
 
 datasource db {
-  provider = "sqlite"
+  provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 
 model Order {
-  id                String   @id @default(cuid())
-  orderId           String   @unique
+  id                String    @id @default(cuid())
+  orderId           String    @unique
   fullName          String
   businessName      String
   mobile            String
@@ -21,20 +21,20 @@ model Order {
   currentMethod     String?
   message           String?
   amount            Float
-  paymentStatus     String   @default("PENDING")
+  paymentStatus     String    @default("PENDING")
   payuTransactionId String?
   paymentReference  String?
   paymentDate       DateTime?
-  crmAccountStatus  String   @default("PENDING_SETUP")
+  crmAccountStatus  String    @default("PENDING_SETUP")
   accountCreatedAt  DateTime?
   loginSentAt       DateTime?
-  onboardingStatus  String   @default("PENDING_SETUP")
+  onboardingStatus  String    @default("PENDING_SETUP")
   utmSource         String?
   utmMedium         String?
   utmCampaign       String?
   utmContent        String?
   utmTerm           String?
   adminNotes        String?
-  createdAt         DateTime @default(now())
-  updatedAt         DateTime @updatedAt
+  createdAt         DateTime  @default(now())
+  updatedAt         DateTime  @updatedAt
 }
