@@ -96,7 +96,10 @@ export async function POST(req: NextRequest) {
     const hashString = `${merchantKey}|${txnId}|${amount}|${crmType}|${fullName}|${email}|||||||||||${merchantSalt}`;
     const hash = crypto.createHash('sha512').update(hashString).digest('hex');
 
-    const params = new URLSearchParams({
+    // PayU requires an actual POST form submission, not a GET query-string redirect.
+    // So we return the raw params + action URL, and the frontend builds a hidden
+    // <form method="POST"> and submits it.
+    const payuParams = {
       key: merchantKey,
       txnid: txnId,
       amount: String(amount),
@@ -108,11 +111,14 @@ export async function POST(req: NextRequest) {
       furl: failureUrl,
       hash,
       service_provider: 'payu_paisa',
+    };
+
+    return NextResponse.json({
+      paymentActionUrl: `${baseUrl}/_payment`,
+      payuParams,
+      orderId,
+      txnId,
     });
-
-    const paymentUrl = `${baseUrl}/_payment?${params.toString()}`;
-
-    return NextResponse.json({ paymentUrl, orderId, txnId });
   } catch (error) {
     console.error('Create order error:', error);
     return NextResponse.json({ error: 'Internal server error. Please try again.' }, { status: 500 });

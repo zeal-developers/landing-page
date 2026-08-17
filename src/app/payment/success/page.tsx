@@ -41,7 +41,9 @@ function SuccessContent() {
           }
           // Fire Meta Pixel Purchase event ONLY after server verification
           if (typeof window !== 'undefined' && (window as unknown as Record<string, unknown>).fbq) {
-            (window as unknown as { fbq: (event: string, data?: Record<string, unknown>) => void }).fbq('track', 'Purchase', {
+            (window as unknown as {
+              fbq: (event: string, eventName: string, data?: Record<string, unknown>) => void;
+            }).fbq('track', 'Purchase', {
               value: PRICE,
               currency: 'INR',
             });

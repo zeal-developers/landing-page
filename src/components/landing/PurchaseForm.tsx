@@ -117,12 +117,27 @@ export default function PurchaseForm({ preselectedCrm }: PurchaseFormProps) {
       });
       const data = await res.json();
 
-      if (data.paymentUrl) {
+      if (data.paymentActionUrl && data.payuParams) {
         // Track InitiateCheckout
         if (typeof window !== 'undefined' && (window as unknown as Record<string, unknown>).fbq) {
-          (window as unknown as { fbq: (event: string, data?: Record<string, unknown>) => void }).fbq('track', 'InitiateCheckout', { value: PRICE, currency: 'INR' });
+          (window as unknown as { fbq: (...args: [string, string, Record<string, unknown>?]) => void }).fbq('track', 'InitiateCheckout', { value: PRICE, currency: 'INR' });
         }
-        window.location.href = data.paymentUrl;
+
+        // PayU requires a real POST form submission, not a GET redirect with query params
+        const form2 = document.createElement('form');
+        form2.method = 'POST';
+        form2.action = data.paymentActionUrl;
+
+        Object.entries(data.payuParams as Record<string, string>).forEach(([name, value]) => {
+          const input = document.createElement('input');
+          input.type = 'hidden';
+          input.name = name;
+          input.value = value;
+          form2.appendChild(input);
+        });
+
+        document.body.appendChild(form2);
+        form2.submit();
       } else {
         toast.error(data.error || 'Something went wrong. Please try again.');
       }
