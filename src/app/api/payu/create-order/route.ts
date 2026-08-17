@@ -5,7 +5,24 @@ import crypto from 'crypto';
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
-    const { fullName, businessName, mobile, whatsapp, email, city, crmType, teamSize, currentMethod, message, amount, utmSource, utmMedium, utmCampaign, utmContent, utmTerm } = body;
+    const { 
+      fullName, 
+      businessName, 
+      mobile, 
+      whatsapp, 
+      email, 
+      city, 
+      crmType, 
+      teamSize, 
+      currentMethod, 
+      message, 
+      amount, 
+      utmSource, 
+      utmMedium, 
+      utmCampaign, 
+      utmContent, 
+      utmTerm 
+    } = body;
 
     // Validate required fields
     if (!fullName || !businessName || !mobile || !email || !crmType) {
@@ -22,11 +39,15 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'Enter a valid email address.' }, { status: 400 });
     }
 
-    const merchantKey = process.env.PAYU_MERCHANT_KEY;
-    const merchantSalt = process.env.PAYU_MERCHANT_SALT;
-    const environment = process.env.PAYU_ENVIRONMENT || 'test';
+    // Fetch keys with fallbacks
+    const merchantKey = process.env.PAYU_MERCHANT_KEY || process.env.NEXT_PUBLIC_PAYU_KEY || '';
+    const merchantSalt = process.env.PAYU_MERCHANT_SALT || '';
+    
+    // Default environment to 'live' unless explicitly set to 'test'
+    const environment = process.env.PAYU_ENVIRONMENT || 'live';
 
     if (!merchantKey || !merchantSalt) {
+      console.error('PayU Environment Variables Missing! Key:', merchantKey, 'Salt Available:', !!merchantSalt);
       return NextResponse.json({ error: 'Payment gateway is not configured. Please contact support.' }, { status: 500 });
     }
 
@@ -65,7 +86,7 @@ export async function POST(req: NextRequest) {
       test: 'https://test.payu.in',
       live: 'https://secure.payu.in',
     };
-    const baseUrl = payuBaseUrls[environment] || payuBaseUrls.test;
+    const baseUrl = payuBaseUrls[environment] || payuBaseUrls.live;
 
     const appUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://trinetraaisolutions.com';
     const successUrl = `${appUrl}/payment/success?orderId=${orderId}`;
